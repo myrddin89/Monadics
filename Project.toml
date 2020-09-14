@@ -1,0 +1,4 @@
+name = "Monadics"
+uuid = "a809c28c-6f29-4bc8-bf6a-3211e9f9e732"
+authors = ["Nicola Mosco <nicola.mosco@gmail.com>"]
+version = "0.1.0"
