@@ -1,7 +1,3 @@
----
-syntax: julia
----
-
 # Monadics
 
 This packages provides a simple implementation of the [Monad](https://https://en.wikipedia.org/wiki/Monad_%28functional_programming%29)

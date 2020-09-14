@@ -3,7 +3,7 @@ __precompile__()
 module Monadics
 
 
-export mbind, mreturn, mjoin
+export mbind, mreturn, mjoin, @monadic, ↣
 
 
 function mbind end
@@ -27,10 +27,10 @@ function _dispatch_monadic(s::Symbol)
         @inline mreturn(::Type{$s}, x) = $s(x)
         @inline mjoin(m::$s) = mbind(identity, m)
         @inline Base.map(f::Function, m::$s) =
-        mbind(m) do x
-            mreturn($s, f(x))
-        end
-        @inline Base.:↣(m::$s, f::Function) = mbind(f, m)
+            mbind(m) do x
+                mreturn($s, f(x))
+            end
+        @inline ↣(m::$s, f::Function) = mbind(f, m)
     end
 end
 
