@@ -63,3 +63,4 @@ docbuild.xml
 Makefile
 .tags
 .vscode/
+default.profraw

@@ -3,7 +3,7 @@ __precompile__()
 module Monadics
 
 
-export mbind, mreturn, mjoin, @monadic, ↣
+export mbind, mreturn, mjoin, ↣, @monadic
 
 
 function mbind end
@@ -12,8 +12,10 @@ function mjoin end
 
 
 macro monadic(x)
-    eval(x)
-    _dispatch_monadic(x)
+    quote
+        $(esc(x))
+        $(esc(_dispatch_monadic(x)))
+    end
 end
 
 
